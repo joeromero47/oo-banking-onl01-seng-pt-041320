@@ -25,8 +25,8 @@ class Transfer
   def reverse_transfer
     if status == "complete"
       @sender.deposit(amount)
-      @receiver -= amount 
-      @status = pending 
+      @receiver.deposit()
+      @status = "reversed"
     end
   end
     
